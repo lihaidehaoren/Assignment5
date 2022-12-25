@@ -19,6 +19,7 @@ public class SilverCardMember extends Member {
             points=points-cost;
             cost=0;
         }
+
         if (totalCost<10000){
             points=points+amount/30;
         }
