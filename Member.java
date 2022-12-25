@@ -1,7 +1,10 @@
+import java.util.ArrayList;
+
 public abstract class Member {
     protected String memberId;
     protected char gender;
     protected int age;
+    private ArrayList<Order> orders = new ArrayList<>();
 
     public Member(String info) {
         String[] parts = info.split(" ");
@@ -16,9 +19,31 @@ public abstract class Member {
         return 0;
     }
 
-    public String getGenderAgeCost() {
-        return memberId + " " + gender + " " + age + " " + getTotalCost();
+    public char getGender() {
+        return gender;
     }
 
-    public abstract String toString();
+    public int getAge() {
+        return age;
+    }
+
+    public String getMemberId() {
+        return memberId;
+    }
+
+    public String getGenderAgeCost() {
+        return memberId + " " + gender + " " + age + " " + String.format("%.1f",getTotalCost());
+    }
+
+    public  String toString(){
+        return memberId + " " + gender + " " + age;
+    }
+
+   public ArrayList<Order> getOrders(){
+       return orders;
+   }
+
+   public void addOder(Order order){
+        orders.add(order);
+   }
 }
