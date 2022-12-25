@@ -9,10 +9,16 @@ public abstract class Member {
         this.gender = parts[1].charAt(0);
         this.age = Integer.parseInt(parts[2]);
     }
-    public String getMemberId(){
-        return memberId;
-    }
 
     public abstract double consume(int amount);
+
+    public double getTotalCost() {
+        return 0;
+    }
+
+    public String getGenderAgeCost() {
+        return memberId + " " + gender + " " + age + " " + getTotalCost();
+    }
+
     public abstract String toString();
 }
